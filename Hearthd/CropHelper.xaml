@@ -1,0 +1,12 @@
+﻿<Window x:Class="Hearthd.CropHelper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hearthd"
+        mc:Ignorable="d"
+        Title="CropHelper" Topmost="True" AllowsTransparency="True" WindowStyle="None" WindowState="Maximized" Background="#7F9B9B9B" MouseLeftButtonDown="Window_MouseLeftButtonDown" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseMove="Window_MouseMove" KeyDown="Window_KeyDown">
+    <Canvas x:Name="Container">
+        <Rectangle Canvas.Top="0" Canvas.Left="0" Width="10" Height="10" x:Name="Marquee" Fill="#7FDC3434" Visibility="Visible"></Rectangle>
+    </Canvas>
+</Window>
