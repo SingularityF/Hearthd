@@ -1,2 +1,2 @@
 version 1.0.1:
-1. Retrained Play Standard detector.
+1. Retrained Play Mode detector.
