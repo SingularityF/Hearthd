@@ -8,4 +8,4 @@ Press start view ->
 The magic begins!
 
 Latest binary build: 
-https://mega.nz/#!ZhUS3C4T!wtGVU3SXZNSGg75t_aoVFQYBChMoVzzWilLLRqdeIpc
+https://mega.nz/#!E5VQgD4I!cIeEZAm8l6LgLRH4tQg8xZd6n8WjoyxUFFnoimWpm8w
