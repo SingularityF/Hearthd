@@ -1,2 +1,9 @@
 version 1.0.1:
 1. Retrained Play Mode detector.
+
+version 1.1:
+1. Playing cards, attacking and finding taunt minions now process from left to right.
+2. Added wait duration for after using hero power.
+3. Fireblast can now be used properly.
+4. Fixed a bug that causes failure to attack enemy taunt minions when enemy has more than 6 minions.
+5. Possibly fixed a bug that an opponent's mousing on his hero avatar causes failure to end turn.

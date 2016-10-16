@@ -554,7 +554,7 @@ namespace Hearthd
 
         private void FindTaunt()
         {
-            BitmapSource cbmp = CropImage(origCapture, 400, 288, 900, 288);
+            BitmapSource cbmp = CropImage(origCapture, 277, 288, 1098, 288);
             int width = cbmp.PixelWidth;
             int height = cbmp.PixelHeight;
             int stride = cbmp.PixelWidth * (cbmp.Format.BitsPerPixel / 8);
@@ -568,9 +568,13 @@ namespace Hearthd
                     if (pixelData[i * stride + j * (cbmp.Format.BitsPerPixel / 8) + 1] == 255 && pixelData[i * stride + j * (cbmp.Format.BitsPerPixel / 8) + 2] == 255 &&
                         ((int)pixelData[j * (cbmp.Format.BitsPerPixel / 8)] + (int)pixelData[j * (cbmp.Format.BitsPerPixel / 8) + 1] + (int)pixelData[j * (cbmp.Format.BitsPerPixel / 8) + 2]) < 700)
                     {
-                        tauntX = 400 + j - 10;
+                        //tauntX = 400 + j - 10;
+                        //tauntY = 288;
+                        //tauntAvail = true;
+                        tauntX = 277 + j + 10;
                         tauntY = 288;
                         tauntAvail = true;
+                        break;
                     }
                 }
             }
@@ -600,9 +604,13 @@ namespace Hearthd
                     if (pixelData[i * stride + j * (cbmp.Format.BitsPerPixel / 8) + 1] == 255 &&
                         ((int)pixelData[j * (cbmp.Format.BitsPerPixel / 8)] + (int)pixelData[j * (cbmp.Format.BitsPerPixel / 8) + 1] + (int)pixelData[j * (cbmp.Format.BitsPerPixel / 8) + 2]) < 510)
                     {
-                        cardX = 400 + j;
+                        //cardX = 400 + j;
+                        //cardY = 764;
+                        //cardAvail = true;
+                        cardX = 400 + j + 10;
                         cardY = 764;
                         cardAvail = true;
+                        break;
                     }
                 }
             }
@@ -632,9 +640,13 @@ namespace Hearthd
                     if (pixelData[i * stride + j * (cbmp.Format.BitsPerPixel / 8) + 1] == 255 &&
                         ((int)pixelData[j * (cbmp.Format.BitsPerPixel / 8)] + (int)pixelData[j * (cbmp.Format.BitsPerPixel / 8) + 1] + (int)pixelData[j * (cbmp.Format.BitsPerPixel / 8) + 2]) < 510)
                     {
-                        minionX = 277 + j - 10;
+                        //minionX = 277 + j - 10;
+                        //minionY = 419;
+                        //minionAvail = true;
+                        minionX = 277 + j + 10;
                         minionY = 419;
                         minionAvail = true;
+                        break;
                     }
                 }
             }
@@ -682,13 +694,14 @@ namespace Hearthd
                 }
                 else if (heroAvail && !heroBlocked)
                 {
-                    idleTicks = 0;
                     heroSearchTime++;
                     if (heroSearchTime > 7)
                     {
                         heroBlocked = true;
                         heroSearchTime = 0;
+                        return;
                     }
+                    idleTicks = 0;
                     TakeAction(Actions.AttackHero);
                 }
                 else if (tauntAvail)
@@ -777,7 +790,9 @@ namespace Hearthd
             {
                 MouseAction act = new MouseAction(false, 809, 587, 0, Stages.MyTurn);
                 MouseActionQueue.Enqueue(act);
-                act = new MouseAction(false, 10, 10, 0, Stages.MyTurn);
+                act = new MouseAction(false, 687, 144, 0, Stages.MyTurn);
+                MouseActionQueue.Enqueue(act);
+                act = new MouseAction(true, 10, 10, 4, Stages.MyTurn);
                 MouseActionQueue.Enqueue(act);
             }
             else if (action == Actions.EndTurn)
