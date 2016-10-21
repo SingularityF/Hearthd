@@ -831,7 +831,7 @@ namespace Hearthd
                 currentStage = Stages.MainMenu;
                 StageDisplay.Content = "Main Menu";
             }
-            else if (GetDistance(GetAreaHash(962, 594, 1024, 664), 2190625842209131070) < distanceThresh)
+            else if (GetDistance(GetAreaHash(965, 599, 1027, 659), 2802059791646259758) < distanceThresh)
             {
                 currentStage = Stages.PlayMode;
                 StageDisplay.Content = "Play Mode";
